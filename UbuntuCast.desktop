@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=UbuntuCast
+Comment=Stream content to Chromecast devices
+Exec=/usr/local/bin/ubuntucast
+Icon=/usr/share/icons/hicolor/128x128/apps/ubuntucast.png
+Terminal=false
+Type=Application
+Categories=AudioVideo;Video;Network;
+Keywords=chromecast;cast;stream;media;
+StartupNotify=true
+StartupWMClass=ubuntucast 

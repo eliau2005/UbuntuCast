@@ -1,73 +1,72 @@
 # UbuntuCast
 
-Here's how to install UbuntuCast on Ubuntu:
+A screen casting tool for Ubuntu Linux that allows casting your screen to Chromecast devices and other Google Cast-compatible receivers.
 
-## Prerequisites
+## Features
 
-First, install the required system dependencies:
-
-```bash
-sudo apt update
-sudo apt install -y python3 python3-pip python3-pyqt5 python3-dbus ffmpeg libpulse-dev xdotool wmctrl
-```
-
-For Wayland support (optional but recommended if you use Wayland):
-```bash
-sudo apt install -y wf-recorder
-```
+- Cast your entire screen or a specific window
+- Stream audio along with video
+- Discover and connect to Cast devices on your network
+- Support for various resolutions and framerates
+- Minimal UI with system tray integration
+- Integration with Ubuntu desktop environments (GNOME, Unity, KDE, XFCE)
+- Support for both X11 and Wayland sessions
 
 ## Installation
 
-### Method 1: Direct Installation from Source
+### From source
 
-1. Navigate to the UbuntuCast directory:
+1. Clone the repository:
 ```bash
-cd UbuntuCast
+git clone https://github.com/yourusername/ubuntucast.git
+cd ubuntucast
 ```
 
-2. Install using pip:
+2. Install dependencies:
+```bash
+sudo apt install python3-pip ffmpeg libpulse-dev python3-pyqt5 xdotool wmctrl
+pip3 install -r requirements.txt
+```
+
+3. Install the package:
 ```bash
 pip3 install .
 ```
 
-3. If you prefer to install for your user only (no sudo required):
+### Optional dependencies
+
+For Wayland support:
 ```bash
-pip3 install --user .
+sudo apt install wf-recorder
 ```
 
-### Method 2: Using the Installation Script
+## Usage
 
-If a scripts/install_dependencies.sh file is included:
-
-```bash
-cd UbuntuCast
-sudo ./scripts/install_dependencies.sh
-```
-
-## Post-Installation Setup
-
-After installation, ensure the desktop file is properly installed:
-
-```bash
-# Copy desktop file for system-wide integration
-sudo cp UbuntuCast.desktop /usr/share/applications/
-
-# Create the log directory if needed
-mkdir -p ~/.local/share/ubuntucast/logs
-```
-
-## Running UbuntuCast
-
-You can now run UbuntuCast from your application launcher or by typing:
+Launch UbuntuCast from your application menu or run:
 
 ```bash
 ubuntucast
 ```
 
+1. Select a casting device from the list
+2. Choose whether to cast your entire screen or a specific window
+3. Configure audio settings if needed
+4. Click "Start Casting"
+
+## Requirements
+
+- Ubuntu 20.04 or newer
+- Python 3.8+
+- FFmpeg
+- PulseAudio
+- A Chromecast or other Google Cast compatible device
+
 ## Troubleshooting
 
-If you encounter any issues:
+- If you're using Wayland and experiencing issues, try installing wf-recorder for better screen capture support
+- If no devices are found, ensure your Chromecast and computer are on the same network
+- For audio issues, check your PulseAudio configuration
 
-- Make sure all dependencies are installed
-- Check log files in `~/.local/share/ubuntucast/logs/`
-- Verify the application has proper permissions
+## License
+
+MIT License 
