@@ -18,7 +18,7 @@ A screen casting tool for Ubuntu Linux that allows casting your screen to Chrome
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/ubuntucast.git
+git clone https://github.com/eliau2005/ubuntucast.git
 cd ubuntucast
 ```
 
